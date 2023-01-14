@@ -11,6 +11,13 @@ const port = process.env.PORT || 4000
 app.use(bodyParser.json(), cors())
 app.options('*', cors())
 
+app.get('/', (req, res) => {
+  return res.status(200).send({
+    message:
+      "Welcome tp QuickHealthZoom, use the POST method to perform the QuicHealth Zoom SDK Authorization",
+  });
+})
+
 app.post('/', (req, res) => {
 
   const iat = Math.round(new Date().getTime() / 1000) - 30;
