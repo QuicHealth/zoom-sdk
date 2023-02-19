@@ -12,6 +12,8 @@ app.use(bodyParser.json(), cors())
 app.options('*', cors())
 
 app.get('/', (req, res) => {
+
+  console.log("sdk", process.env.ZOOM_SDK_KEY)
   return res.status(200).send({
     message:
       "Welcome tp QuickHealthZoom, use the POST method to perform the QuicHealth Zoom SDK Authorization",
